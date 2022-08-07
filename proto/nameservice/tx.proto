@@ -1,0 +1,33 @@
+syntax = "proto3";
+package nameservice.nameservice;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "nameservice/x/nameservice/types";
+
+// Msg defines the Msg service.
+service Msg {
+      rpc ByName(MsgByName) returns (MsgByNameResponse);
+  rpc SetName(MsgSetName) returns (MsgSetNameResponse);
+// this line is used by starport scaffolding # proto/tx/rpc
+}
+
+message MsgByName {
+  string creator = 1;
+  string name = 2;
+  string bid = 3;
+}
+
+message MsgByNameResponse {
+}
+
+message MsgSetName {
+  string creator = 1;
+  string name = 2;
+  string value = 3;
+}
+
+message MsgSetNameResponse {
+}
+
+// this line is used by starport scaffolding # proto/tx/message
