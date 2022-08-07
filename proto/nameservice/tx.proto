@@ -9,6 +9,7 @@ option go_package = "nameservice/x/nameservice/types";
 service Msg {
       rpc ByName(MsgByName) returns (MsgByNameResponse);
   rpc SetName(MsgSetName) returns (MsgSetNameResponse);
+  rpc DeleteName(MsgDeleteName) returns (MsgDeleteNameResponse);
 // this line is used by starport scaffolding # proto/tx/rpc
 }
 
@@ -28,6 +29,15 @@ message MsgSetName {
 }
 
 message MsgSetNameResponse {
+}
+
+message MsgDeleteName {
+  string creator = 1;
+  string name = 2;
+  string value = 3;
+}
+
+message MsgDeleteNameResponse {
 }
 
 // this line is used by starport scaffolding # proto/tx/message

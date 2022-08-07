@@ -1,0 +1,14 @@
+syntax = "proto3";
+package nameservice.nameservice;
+
+option go_package = "nameservice/x/nameservice/types";
+
+message Whois {
+  string index = 1; 
+  string name = 2; 
+  string value = 3; 
+  string price = 4; 
+  string owner = 5; 
+  
+}
+
